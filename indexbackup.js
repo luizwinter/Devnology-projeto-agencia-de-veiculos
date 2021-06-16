@@ -1,0 +1,1 @@
+let VehicleController = new VehicleController("form-sale", "form-purchase")

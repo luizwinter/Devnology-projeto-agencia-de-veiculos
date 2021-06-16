@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/cover.css" rel="stylesheet">
+
+    <title>Hello, world!</title>
+  </head>
+  <body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Cover</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Área do gestor</h1>
+        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+          
+          
+              <div class="row">
+              <div class="col-md-6 order-md-1">
+              <h4 class="mb-3">Cadastrar compra</h4>
+              <form id="form-purchase" class="needs-validation" novalidate>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="vehiclemodel">Modelo</label>
+                    <input name="model" type="text" class="form-control" id="vehiclemodel" placeholder="" value="" required>
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="vehiclebrand">Marca</label>
+                    <input name="brand" type="text" class="form-control" id="vehiclebrand" placeholder="" value="" required>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="vehicleyear">Ano do veículo</label>
+                    <input name="year" type="text" class="form-control" id="vehicleyear" placeholder="" value="" required>
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="veicleplate">Placa</label>
+                    <input name="plate" type="text" class="form-control" id="veicleplate" placeholder="" value="" required>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="vehiclecollor">Cor</label>
+                    <input name="color" type="text" class="form-control" id="vehiclecollor" placeholder="" value="" required>
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="veiclechassi">Chassi</label>
+                    <input name="chassi" type="text" class="form-control" id="veiclechassi" placeholder="" value="" required>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+              </form>
+                </div>
+
+                  <div class="col-md-6 order-md-2">
+              <h4 class="mb-3">Cadastrar Venda</h4>
+              <form id="form-sale" class="needs-validation" novalidate>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="selldate">Data</label>
+                    <input name="date" type="text" class="form-control" id="selldate" placeholder="" value="" required>
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="sellvalue">Valor</label>
+                    <input name="value" type="text" class="form-control" id="sellvalue" placeholder="" value="" required>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-8 mb-3">
+                    <label for="sellemploy">Nome do vendedor</label>
+                    <input name="employ" type="text" class="form-control" id="sellemploy" placeholder="" value="" required>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label  for="sellbonus">Comissão</label>
+                    <input name="bonus" type="text" class="form-control" id="sellbonus" placeholder="" value="" required>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+              </form>
+                </div>
+                            
+          </div>
+          
+        <div class="col-md-12">
+          
+        <h1 class="cover-heading"> Lista de veículos</h1>
+        </div>
+        
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+      </footer>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+      
+        <!--  Meu JS -->
+      <script src="models/Vehicle.js"></script>
+      <script src="index.js"></script>
+      
+
+      
+        <!--  Fim do meu JS -->
+
+  </body>
+</html>
