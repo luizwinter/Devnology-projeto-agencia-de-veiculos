@@ -13,6 +13,8 @@ function addLine(dataCar){
                           <td>${dataCar.plate}</td>
                           <td>${dataCar.color}</td>
                           <td>${dataCar.chassi}</td>
+                          <td>${dataCar.dateb}</td>
+                          <td>${dataCar.valueb}</td>
                         </tr>
 `
     document.getElementById("table-car-list").appendChild(tr);
