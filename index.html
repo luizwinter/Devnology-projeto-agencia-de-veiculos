@@ -91,10 +91,13 @@
                   <div class="col-md-6 order-md-2">
               <h4 class="mb-3">Cadastrar Venda</h4>
               <form id="form-sale" class="needs-validation" novalidate>
+                  
+                  
+                  
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="selldate">Data</label>
-                    <input name="date" type="text" class="form-control" id="selldate" placeholder="" value="" required>
+                    <label for="seller">Vendedor</label>
+                    <input name="seller" type="text" class="form-control" id="seller" placeholder="" value="" required>
                   </div>
 
                   <div class="col-md-6 mb-3">
@@ -105,13 +108,13 @@
 
                 <div class="row">
                   <div class="col-md-8 mb-3">
-                    <label for="sellemploy">Nome do vendedor</label>
-                    <input name="employ" type="text" class="form-control" id="sellemploy" placeholder="" value="" required>
+                    <label for="sellbonus">Comissão</label>
+                    <input name="bonus" type="text" class="form-control" id="sellbonus" placeholder="" value="" required>
                   </div>
 
                   <div class="col-md-4 mb-3">
-                    <label  for="sellbonus">Comissão</label>
-                    <input name="bonus" type="text" class="form-control" id="sellbonus" placeholder="" value="" required>
+                    <label  for="selldate">Data</label>
+                    <input name="date" type="text" class="form-control" id="selldate" placeholder="" value="" required>
                   </div>
                 </div>
 
@@ -124,46 +127,89 @@
 
           
           <article>
+                      <h1 class="cover-heading "> Lista de veículos</h1>
+
+            <div class="col-md-12 d-flex justify-content-center">
           
-            <div class="col-md-12">
-          
-            <h1 class="cover-heading"> Lista de veículos</h1>
                 
 <table class="table" id="table-car-list">
   <thead>
     <tr>
       <th scope="col">Modelo</th>
       <th scope="col">Marca</th>
+      <th scope="col">Ano</th>
       <th scope="col">Placa</th>
       <th scope="col">Cor</th>
       <th scope="col">Chassi</th> 
       <th scope="col">Data</th>
-      <th scope="col">Valor</th>   </thead>
+      <th scope="col">Valor</th>  
+      <th scope="col">Situação</th>  
+    </thead>
   <tbody>
       
                      <tr>
                           <td>Idea</td>
                           <td>Fiat</td>
+                          <td>2017</td>
                           <td>KBZ2543</td>
                           <td>Lilas</td>
                           <td>5254854745</td>
                           <td>12/04/2006</td>
-                          <td>45.000,00</td>                    </tr>
+                          <td>45.000,00</td>     
+                          <td>Vendido</td>     
+
+                    </tr>
                      <tr>
                           <td>Prisma</td>
                           <td>Chevrollet</td>
+                          <td>2018</td>
                           <td>LRO007</td>
                           <td>Vermelho</td>
                           <td>9654712571</td>
                           <td>05/11/2008</td>
-                          <td>75.000,00</td>                    </tr>      
+                          <td>75.000,00</td>          
+                          <td>Disponível</td>     
+                    </tr>      
 
   </tbody>
 </table>                
         </div>
           
           </article>
-        
+          <article>
+          
+            <div class="col-md-12">
+          
+            <h1 class="cover-heading"> Vendas</h1>
+                
+            <table class="table" id="table-sale-list">
+              <thead>
+                <tr>
+                  <th scope="col">Nome </th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Comissão</th>
+                  <th scope="col">Data</th>
+             </thead>
+              <tbody>
+      
+                     <tr>
+                          <td>Leonardo Vieira</td>
+                          <td>47.000,00</td>
+                          <td>4.700,00</td>
+                          <td>12/05/2021</td>
+                    </tr>
+                     <tr>
+                          <td>Flávio Augusto</td>
+                          <td>56.000,00</td>
+                          <td>5.600,00</td>
+                          <td>21/04/2021</td>
+                    </tr>    
+
+  </tbody>
+</table>                
+        </div>
+          
+          </article>
       </main>
 
       <footer class="mastfoot mt-auto">

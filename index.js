@@ -1,7 +1,13 @@
 var fields = document.querySelectorAll("#form-purchase [name]");
+var fields_sale = document.querySelectorAll("#form-sale [name]");
 var vehicle = {};
+var sale = {};
 
 
+// fim das  variaveis
+
+
+// inicio do cadastramento de veiculos
 function addLine(dataCar){
     
     var tr = document.createElement("tr");
@@ -10,24 +16,20 @@ function addLine(dataCar){
                         <tr>
                           <td>${dataCar.model}</td>
                           <td>${dataCar.brand}</td>
+                          <td>${dataCar.year}</td>
                           <td>${dataCar.plate}</td>
                           <td>${dataCar.color}</td>
                           <td>${dataCar.chassi}</td>
                           <td>${dataCar.dateb}</td>
                           <td>${dataCar.valueb}</td>
+                          <td>Disponível</td>
+
                         </tr>
 `
     document.getElementById("table-car-list").appendChild(tr);
 
 
 }
-
-
-fields.forEach(function(field, index){
-    
-    vehicle[field.name] = field.value;
-    
-});
 
 
 document.getElementById("form-purchase").addEventListener("submit", function(event){
@@ -41,3 +43,45 @@ document.getElementById("form-purchase").addEventListener("submit", function(eve
 });
     addLine(vehicle);
 });
+
+// fim do cadastramento de veiculos
+
+// Preciso criar um metodo para as duas funcionalidades. por enquanto vou repetir.
+
+
+//incio do cadastro de vendas
+
+document.getElementById("form-sale").addEventListener("submit", function(event){
+    
+    event.preventDefault();
+    
+fields_sale.forEach(function(field, index){
+    
+    sale[field.name] = field.value;
+    
+});
+    addLineSale(sale);
+});
+
+
+
+
+function addLineSale(dataSale){
+    
+    var tr = document.createElement("tr");
+    
+    tr.innerHTML = `
+                        <tr>
+                          <td>${dataSale.seller}</td>
+                          <td>${dataSale.value}</td>
+                          <td>${dataSale.bonus}</td>
+                          <td>${dataSale.date}</td>
+
+                        </tr>
+`
+    document.getElementById("table-sale-list").appendChild(tr);
+
+
+}
+
+//fim do cadastro de vendas
