@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="css/cover.css" rel="stylesheet">
 
-    <title>Hello, world!</title>
+    <title>Devnology Veículos </title>
   </head>
   <body class="text-center">
 
@@ -23,7 +23,7 @@
           <h3 class="masthead-brand"> Devnology Veículos </h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Histórico</a>
             <a class="nav-link" href="#">Contact</a>
           </nav>
         </div>
@@ -117,7 +117,14 @@
                     <input name="date" type="text" class="form-control" id="selldate" placeholder="" value="" required>
                   </div>
                 </div>
+                  
+                    <div class="col-md-12 mb-3">
 
+                    <label  for="chassisale">Chassi</label>
+                    <input name="chassisale" type="text" class="form-control" id="selldate" placeholder="" value="" required>
+                    </div>
+
+                        
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
               </form>
                 </div>
@@ -145,7 +152,7 @@
       <th scope="col">Valor</th>  
       <th scope="col">Situação</th>  
     </thead>
-  <tbody>
+  <tbody id="car-list">
       
                      <tr>
                           <td>Idea</td>
@@ -180,25 +187,43 @@
           
             <div class="col-md-12">
           
-            <h1 class="cover-heading"> Vendas</h1>
+            <h1 class="cover-heading"> Histórico</h1>
                 
             <table class="table" id="table-sale-list">
               <thead>
                 <tr>
+                  <th scope="col">Tipo </th>
                   <th scope="col">Nome </th>
                   <th scope="col">Valor</th>
                   <th scope="col">Comissão</th>
                   <th scope="col">Data</th>
              </thead>
               <tbody>
-      
                      <tr>
+                          <td>Compra</td>
+                          <td>---</td>
+                          <td>45.000,00	</td>
+                          <td>---</td>
+                          <td>12/04/2006</td>
+                    </tr>
+                  
+                     <tr>
+                          <td>Compra</td>
+                          <td>---</td>
+                          <td>75.000,00</td>
+                          <td>---</td>
+                          <td>05/11/2008	</td>
+                    </tr>
+                  
+                     <tr>
+                          <td>Venda</td>
                           <td>Leonardo Vieira</td>
                           <td>47.000,00</td>
-                          <td>4.700,00</td>
+                          <td>---</td>
                           <td>12/05/2021</td>
                     </tr>
                      <tr>
+                          <td>Venda</td>
                           <td>Flávio Augusto</td>
                           <td>56.000,00</td>
                           <td>5.600,00</td>

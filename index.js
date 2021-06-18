@@ -9,17 +9,17 @@ var sale = {};
 
 // inicio do cadastramento de veiculos
 function addLine(dataCar){
-    
+        
     var tr = document.createElement("tr");
-    
+            
     tr.innerHTML = `
-                        <tr>
+                        <tr class="carlist">
                           <td>${dataCar.model}</td>
                           <td>${dataCar.brand}</td>
                           <td>${dataCar.year}</td>
                           <td>${dataCar.plate}</td>
                           <td>${dataCar.color}</td>
-                          <td>${dataCar.chassi}</td>
+                          <td class="car_id">${dataCar.chassi}</td>
                           <td>${dataCar.dateb}</td>
                           <td>${dataCar.valueb}</td>
                           <td>Disponível</td>
@@ -27,8 +27,28 @@ function addLine(dataCar){
                         </tr>
 `
     document.getElementById("table-car-list").appendChild(tr);
+    
+
+}
 
 
+function addLinepurchese(dataCar){
+    
+        var tr = document.createElement("tr");
+    
+        tr.innerHTML = `
+                        <tr>
+                          <td>Compra</td>
+                          <td>---</td>
+                          <td>${dataCar.valueb}</td>
+                          <td>---</td>
+                          <td>${dataCar.dateb}</td>
+
+                        </tr>
+`
+    document.getElementById("table-sale-list").appendChild(tr);
+        
+    
 }
 
 
@@ -42,6 +62,7 @@ document.getElementById("form-purchase").addEventListener("submit", function(eve
     
 });
     addLine(vehicle);
+    addLinepurchese(vehicle);
 });
 
 // fim do cadastramento de veiculos
@@ -72,6 +93,7 @@ function addLineSale(dataSale){
     
     tr.innerHTML = `
                         <tr>
+                          <td>Venda</td>
                           <td>${dataSale.seller}</td>
                           <td>${dataSale.value}</td>
                           <td>${dataSale.bonus}</td>
@@ -80,8 +102,22 @@ function addLineSale(dataSale){
                         </tr>
 `
     document.getElementById("table-sale-list").appendChild(tr);
+    
+    removeCar(dataSale.chassisale);
 
 
 }
 
 //fim do cadastro de vendas
+
+function removeCar(dataChassi){
+    
+
+    var list = document.getElementById("car-list").querySelectorAll(".car_id");
+    
+    console.log(list);
+    
+}
+
+ 
+//
