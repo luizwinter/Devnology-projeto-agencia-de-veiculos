@@ -11,22 +11,24 @@ var sale = {};
 function addLine(dataCar){
         
     var tr = document.createElement("tr");
+    
+    
             
     tr.innerHTML = `
-                        <tr class="carlist">
+                        <tr>
                           <td>${dataCar.model}</td>
                           <td>${dataCar.brand}</td>
                           <td>${dataCar.year}</td>
                           <td>${dataCar.plate}</td>
                           <td>${dataCar.color}</td>
-                          <td class="car_id">${dataCar.chassi}</td>
+                          <td class="chassi">${dataCar.chassi}</td>
                           <td>${dataCar.dateb}</td>
                           <td>${dataCar.valueb}</td>
-                          <td>Disponível</td>
+                          <td class="status">Disponível</td>
 
                         </tr>
 `
-    document.getElementById("table-car-list").appendChild(tr);
+    document.getElementById("car-list").appendChild(tr).className = "date-car";
     
 
 }
@@ -104,7 +106,7 @@ function addLineSale(dataSale){
     document.getElementById("table-sale-list").appendChild(tr);
     
     removeCar(dataSale.chassisale);
-
+    
 
 }
 
@@ -112,12 +114,42 @@ function addLineSale(dataSale){
 
 function removeCar(dataChassi){
     
-
-    var list = document.getElementById("car-list").querySelectorAll(".car_id");
+    var _dataChassi = this.dataChassi;
     
+    console.log(dataChassi + "  chassi manipulado")
+    
+    let list = document.querySelectorAll(".date-car");
+
+    console.log("Lista das linhas");
     console.log(list);
     
-}
+    
+    
+    list.forEach(function(list, index, _dataChassi){
+        
+        
+       let chassi_field = list.querySelector(".chassi").innerHTML;
+       let status_field = list.querySelector(".status").innerHTML;
+
+        console.log("chassi_field");
+        console.log(chassi_field);
+        console.log("status_field");
+        console.log(status_field);
+        console.log(_dataChassi);
+
+        
+        if(chassi_field == _dataChassi){
+            
+            status_field = "Vendido";
+        }
+        
+    });
+    
+    
+        
+    };
+
+    
 
  
 //
