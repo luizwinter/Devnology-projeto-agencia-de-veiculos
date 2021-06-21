@@ -114,33 +114,24 @@ function addLineSale(dataSale){
 
 function removeCar(dataChassi){
     
-    var _dataChassi = this.dataChassi;
-    
-    console.log(dataChassi + "  chassi manipulado")
     
     let list = document.querySelectorAll(".date-car");
 
-    console.log("Lista das linhas");
-    console.log(list);
+
     
-    
-    
-    list.forEach(function(list, index, _dataChassi){
+    list.forEach(function(list, index){
         
+        console.log(dataChassi);
+
         
        let chassi_field = list.querySelector(".chassi").innerHTML;
-       let status_field = list.querySelector(".status").innerHTML;
+       let status_field = list.querySelector(".status");
 
-        console.log("chassi_field");
-        console.log(chassi_field);
-        console.log("status_field");
-        console.log(status_field);
-        console.log(_dataChassi);
+        if(chassi_field == dataChassi){
 
+            status_field.textContent = "Vendido";
+            alert(status_field.textContent);
         
-        if(chassi_field == _dataChassi){
-            
-            status_field = "Vendido";
         }
         
     });
