@@ -75,7 +75,7 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="dateb">Data</label>
-                    <input name="dateb" type="text" class="form-control" id="dateb" placeholder="" value="" required>
+                    <input name="dateb" type="date" class="form-control" id="dateb" placeholder="" value="" required>
                   </div>
 
                   <div class="col-md-6 mb-3">
@@ -96,9 +96,21 @@
                   
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="seller">Vendedor</label>
-                    <input name="seller" type="text" class="form-control" id="seller" placeholder="" value="" required>
-                  </div>
+                    <label for="seller" class="form-label">Vendedor</label>
+                    <input name="seller" list="sellers" type="text" class="form-control" id="seller" placeholder="" value="" required>
+                        <datalist id="sellers">
+                            <option value="Diego da Costa"></option>
+                            <option value="Leonardo Vieira"></option>
+                            <option value="Leticia Nunes"></option>
+                            <option value="Fernando Nogueira"></option>
+                            <option value="Flávio Augusto"></option>
+                            <option value="Juliana Torres"></option>
+                            
+                      </datalist>
+                      
+                      
+                      
+                    </div>
 
                   <div class="col-md-6 mb-3">
                     <label for="sellvalue">Valor</label>
@@ -107,21 +119,21 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-md-8 mb-3">
+                  <div class="col-md-6 mb-3">
                     <label for="sellbonus">Comissão</label>
                     <input name="bonus" type="text" class="form-control" id="sellbonus" placeholder="" value="" required>
                   </div>
 
-                  <div class="col-md-4 mb-3">
+                  <div class="col-md-6 mb-3">
                     <label  for="selldate">Data</label>
-                    <input name="date" type="text" class="form-control" id="selldate" placeholder="" value="" required>
+                    <input name="date" type="date" class="form-control" id="selldate" placeholder="" value="" required>
                   </div>
                 </div>
                   
                     <div class="col-md-12 mb-3">
 
                     <label  for="chassisale">Chassi</label>
-                    <input name="chassisale" type="text" class="form-control" id="selldate" placeholder="" value="" required>
+                    <input name="chassisale" type="text" class="form-control" id="sellchassi" placeholder="" value="" required>
                     </div>
 
                         
@@ -189,6 +201,9 @@
           
             <h1 class="cover-heading"> Histórico</h1>
                 
+                
+                
+            <input type="text" name="search" id="search">
             <table class="table" id="table-sale-list">
               <thead>
                 <tr>
@@ -198,36 +213,36 @@
                   <th scope="col">Comissão</th>
                   <th scope="col">Data</th>
              </thead>
-              <tbody>
+              <tbody id="historic_list">
                      <tr>
                           <td>Compra</td>
-                          <td>---</td>
+                          <td class="name_h">---</td>
                           <td>45.000,00	</td>
                           <td>---</td>
-                          <td>12/04/2006</td>
+                          <td class="data_h">12/04/2006</td>
                     </tr>
                   
                      <tr>
                           <td>Compra</td>
-                          <td>---</td>
+                          <td class="name_h">---</td>
                           <td>75.000,00</td>
                           <td>---</td>
-                          <td>05/11/2008	</td>
+                          <td class="data_h">05/11/2008	</td>
                     </tr>
                   
                      <tr>
                           <td>Venda</td>
-                          <td>Leonardo Vieira</td>
+                          <td class="name_h">Leonardo Vieira</td>
                           <td>47.000,00</td>
                           <td>---</td>
-                          <td>12/05/2021</td>
+                          <td class="data_h">12/05/2021</td>
                     </tr>
                      <tr>
                           <td>Venda</td>
-                          <td>Flávio Augusto</td>
+                          <td class="name_h">Flávio Augusto</td>
                           <td>56.000,00</td>
                           <td>5.600,00</td>
-                          <td>21/04/2021</td>
+                          <td class="data_h">21/04/2021</td>
                     </tr>    
 
   </tbody>
@@ -250,7 +265,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
       
         <!--  Meu JS -->
-      <script src="models/Vehicle.js"></script>
       <script src="index.js"></script>
       
 

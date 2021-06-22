@@ -99,7 +99,7 @@ function addLineSale(dataSale){
                           <td>${dataSale.seller}</td>
                           <td>${dataSale.value}</td>
                           <td>${dataSale.bonus}</td>
-                          <td>${dataSale.date}</td>
+                          <td class="historic_date" >${dataSale.date}</td>
 
                         </tr>
 `
@@ -121,8 +121,6 @@ function removeCar(dataChassi){
     
     list.forEach(function(list, index){
         
-        console.log(dataChassi);
-
         
        let chassi_field = list.querySelector(".chassi").innerHTML;
        let status_field = list.querySelector(".status");
@@ -142,5 +140,41 @@ function removeCar(dataChassi){
 
     
 
- 
+
+
+
+    const searchInput = document.getElementById("search");
+    const rows = document.getElementById("historic_list").querySelectorAll('tr')
+
+
+    searchInput.addEventListener('keyup', function(event){
+        
+
+        const q = event.target.value.toLowerCase();
+
+        rows.forEach((row) =>{
+            
+            if(isNaN(q)){
+                
+                row.querySelector('td').textContent.toLowerCase().startsWith(q) ? (row.style.display = "table-row") : row.style.display = 'none';
+                
+                
+                
+            }else{
+                
+                row.querySelector('td.data_h').innerHTML.includes(q) ? (row.style.display = "table-row") : row.style.display = 'none';
+                
+            }
+            
+
+            
+            
+        
+        });
+        
+        
+    });
+    
+    
+    
 //

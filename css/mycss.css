@@ -4,3 +4,11 @@ article{
 }
 
 
+input{
+    font-size: 12px !important;
+}
+
+
+.form-control{
+    padding:5px !important;
+}
