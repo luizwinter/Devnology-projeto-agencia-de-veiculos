@@ -96,14 +96,14 @@ function addLineSale(dataSale){
     tr.innerHTML = `
                         <tr>
                           <td>Venda</td>
-                          <td>${dataSale.seller}</td>
+                          <td class="name_h">${dataSale.seller}</td>
                           <td>${dataSale.value}</td>
                           <td>${dataSale.bonus}</td>
-                          <td class="historic_date" >${dataSale.date}</td>
+                          <td class="data_h" >${dataSale.date}</td>
 
                         </tr>
 `
-    document.getElementById("table-sale-list").appendChild(tr);
+    document.getElementById("historic_list").appendChild(tr);
     
     removeCar(dataSale.chassisale);
     
@@ -144,7 +144,6 @@ function removeCar(dataChassi){
 
 
     const searchInput = document.getElementById("search");
-    const rows = document.getElementById("historic_list").querySelectorAll('tr')
 
 
     searchInput.addEventListener('keyup', function(event){
@@ -152,23 +151,31 @@ function removeCar(dataChassi){
 
         const q = event.target.value.toLowerCase();
 
-        rows.forEach((row) =>{
+        document.getElementById("historic_list").querySelectorAll('tr').forEach((row) =>{
             
-            if(isNaN(q)){
+            
+            
+            if(q.startsWith("compra") || q.startsWith("venda")){
                 
-                row.querySelector('td').textContent.toLowerCase().startsWith(q) ? (row.style.display = "table-row") : row.style.display = 'none';
+                   console.log("pesquisar por compra/venda");
+                  row.style.display = "table-row";
+
+                
+                 row.querySelector('td').textContent.toLowerCase().startsWith(q) ? null : row.style.display = 'none';
                 
                 
+            }else if(q.substr(5,1) == "/" || q.substr(2,1) == "/" || q >= 1900){
+                
+                
+                    row.querySelector('td.data_h').innerHTML.includes(q) ? (row.style.display = "table-row") : row.style.display = 'none';
                 
             }else{
                 
-                row.querySelector('td.data_h').innerHTML.includes(q) ? (row.style.display = "table-row") : row.style.display = 'none';
+                    row.querySelector('td.name_h').textContent.toLowerCase().startsWith(q)? (row.style.display = "table-row") : row.style.display = 'none';
+            
+            };
+            
                 
-            }
-            
-
-            
-            
         
         });
         
