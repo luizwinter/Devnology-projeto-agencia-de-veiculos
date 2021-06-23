@@ -3,6 +3,9 @@ var fields_sale = document.querySelectorAll("#form-sale [name]");
 var vehicle = {};
 var sale = {};
 
+var home_page = document.querySelectorAll("#register_entry, #vehicle_list");
+var historic_page = document.getElementById("historic_article");
+
 
 // fim das  variaveis
 
@@ -25,7 +28,6 @@ function addLine(dataCar){
                           <td>${dataCar.dateb}</td>
                           <td>${dataCar.valueb}</td>
                           <td class="status">Disponível</td>
-
                         </tr>
 `
     document.getElementById("car-list").appendChild(tr).className = "date-car";
@@ -45,7 +47,6 @@ function addLinepurchese(dataCar){
                           <td>${dataCar.valueb}</td>
                           <td>---</td>
                           <td>${dataCar.dateb}</td>
-
                         </tr>
 `
     document.getElementById("table-sale-list").appendChild(tr);
@@ -100,7 +101,6 @@ function addLineSale(dataSale){
                           <td>${dataSale.value}</td>
                           <td>${dataSale.bonus}</td>
                           <td class="data_h" >${dataSale.date}</td>
-
                         </tr>
 `
     document.getElementById("historic_list").appendChild(tr);
@@ -181,6 +181,46 @@ function removeCar(dataChassi){
         
         
     });
+
+
+
+
+// Home page
+
+    
+    document.getElementById("home_btn").addEventListener('click', e=>{
+       
+
+        historic_page.style.display = "none";
+        
+        home_page.forEach(e=>{
+            
+            e.style.display = "block";
+            
+        })        
+        
+    });
+
+
+
+// Historic page
+
+
+    document.getElementById("historic_btn").addEventListener('click', e=>{
+           
+        historic_page.style.display = "block";
+        
+        home_page.forEach(e=>{
+            
+            e.style.display = "none";
+            
+        })
+        
+        
+    });
+
+
+//
     
     
     
