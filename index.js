@@ -6,14 +6,20 @@ var sale = {};
 
 
 //Variaveis para troca de página
-var home_page = document.querySelectorAll("#register_entry, #vehicle_list");
+
+var home_page = document.getElementById("register_entry");
 var historic_page = document.getElementById("historic_article");
+var vehicle_page = document.getElementById("vehicle_list");
+
 
 
 //Variaveis para calculo da comissão
 var car_value = 0 ;
 var seller_bonus = 0;
 
+// Variaveis de calculo
+var display_value = 0;
+var display_bonus = 0;
 
 
 // inicio do cadastro de veiculos
@@ -223,15 +229,10 @@ function removeCar(dataChassi, dataValue){
 
     
     document.getElementById("home_btn").addEventListener('click', e=>{
-       
-
-        historic_page.style.display = "none";
         
-        home_page.forEach(e=>{
-            
-            e.style.display = "block";
-            
-        })        
+        historic_page.style.display = "none";
+        vehicle_page.style.display = "none";
+        home_page.style.display = "block";
         
     });
 
@@ -241,19 +242,79 @@ function removeCar(dataChassi, dataValue){
 
 
     document.getElementById("historic_btn").addEventListener('click', e=>{
-           
+
+        
         historic_page.style.display = "block";
-        
-        home_page.forEach(e=>{
-            
-            e.style.display = "none";
-            
-        })
-        
+        vehicle_page.style.display = "none";
+        home_page.style.display = "none";        
         
     });
 
 
-//
+
+// Vehicle page
+
+document.getElementById("vehicle_btn").addEventListener('click', e=>{
+    
+
+        historic_page.style.display = "none";
+        vehicle_page.style.display = "block";
+        home_page.style.display = "none";
+    
+    
+});
+
+
+// Calculo de valor
+
+
+document.getElementById("calculate").addEventListener('click', e=>{
+    
+
+    document.getElementById("historic_list").querySelectorAll('tr').forEach((row) =>{
+        
+
+        
+        if(row.style.display != "none"){
+            
+            let value_field = row.querySelector('.value_h').textContent;
+            let bonus_field = row.querySelector('.bonus_h').textContent;
+            
+            let g = parseInt(value_field);
+            let h = parseInt(bonus_field);
+            
+            display_value = display_value + g;
+            display_bonus = display_bonus + h;    
+            
+            
+            
+        };
+        
+        document.getElementById("calculate_value").value = display_value;
+        document.getElementById("calculate_bonus").value = display_bonus;
+        
+    });
+    
+    display_value = 0;
+    display_bonus = 0;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     

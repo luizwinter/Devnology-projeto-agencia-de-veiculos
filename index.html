@@ -24,7 +24,7 @@
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" id="home_btn" href="#">Home</a>
             <a class="nav-link" id="historic_btn" href="#">Histórico</a>
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" id="vehicle_btn" href="#">Veículos</a>
           </nav>
         </div>
       </header>
@@ -145,7 +145,7 @@
           </article>
 
           
-          <article id="vehicle_list">
+          <article id="vehicle_list" style="display: none">
                       <h1 class="cover-heading"> Lista de veículos</h1>
 
             <div class="col-md-12 d-flex justify-content-center">
@@ -203,7 +203,38 @@
                 
                 
                 
-            <input type="text" name="search" id="search" placeholder="Procurar...">
+                
+                
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="vehiclebrand">Filtrar</label>
+                    <input class="form-control" type="text" name="search" id="search" placeholder="Ex: Compra, Viviane Augusto, 04/2021">
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label id="calculate" class="calculate">Calcular</label>
+                      
+                      <div class="row">
+                          <div class="col-md-6 mb-3">
+                              
+                          <input name="brand" type="text" class="form-control" id="calculate_bonus" placeholder="" value="Comissão" disabled>                          
+                          </div>
+                          <div class="col-md-6 mb-3">
+                          
+                          <input name="brand" type="text" class="form-control" id="calculate_value" placeholder="" value="Valor total" disabled>                          
+                          </div>
+                          
+
+                          
+                      </div>
+                      
+
+                  </div>
+                </div>                
+                
+                
+                
+                
             <table class="table" id="table-sale-list">
               <thead>
                 <tr>
@@ -217,38 +248,38 @@
                      <tr>
                           <td>Compra</td>
                           <td class="name_h">---</td>
-                          <td>45.000,00	</td>
-                          <td>---</td>
+                          <td class="value_h">4500000</td>
+                          <td class="bonus_h">0</td>
                           <td class="data_h">12/04/2006</td>
                     </tr>
                   
                      <tr>
                           <td>Compra</td>
                           <td class="name_h">---</td>
-                          <td>75.000,00</td>
-                          <td>---</td>
+                          <td class="value_h">7500000</td>
+                          <td class="bonus_h">0</td>
                           <td class="data_h">05/11/2008	</td>
                     </tr>
                   
                      <tr>
                           <td>Venda</td>
                           <td class="name_h">Leonardo Vieira</td>
-                          <td>47.000,00</td>
-                          <td>---</td>
+                          <td class="value_h">4700000</td>
+                          <td class="bonus_h">0</td>
                           <td class="data_h">12/05/2021</td>
                     </tr>
                      <tr>
                           <td>Venda</td>
                           <td class="name_h">Flávio Augusto</td>
-                          <td>56.000,00</td>
-                          <td>5.600,00</td>
+                          <td class="value_h">560000</td>
+                          <td class="bonus_h">100</td>
                           <td class="data_h">21/04/2021</td>
                     </tr>    
                      <tr>
                           <td>Venda</td>
                           <td class="name_h">Viviane Fagundes</td>
-                          <td>55.000,00</td>
-                          <td>5.600,00</td>
+                          <td class="value_h">550000</td>
+                          <td class="bonus_h">200</td>
                           <td class="data_h">05/06/2021</td>
                     </tr>    
   </tbody>

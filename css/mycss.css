@@ -17,3 +17,11 @@ main{
     
     min-height: 700px;
 }
+
+.calculate:hover{
+    cursor: pointer;
+}
+
+.calculate{
+    border-bottom: 1px solid pink;
+}
