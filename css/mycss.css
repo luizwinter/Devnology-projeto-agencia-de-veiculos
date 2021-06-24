@@ -12,3 +12,8 @@ input{
 .form-control{
     padding:5px !important;
 }
+
+main{
+    
+    min-height: 700px;
+}

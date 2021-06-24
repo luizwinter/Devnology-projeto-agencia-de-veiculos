@@ -121,7 +121,7 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="sellbonus">Comissão</label>
-                    <input name="bonus" type="text" class="form-control" id="sellbonus" placeholder="" value="" required>
+                    <input name="bonus" type="text" class="form-control" id="sellbonus" placeholder="" value="" required disabled>
                   </div>
 
                   <div class="col-md-6 mb-3">
@@ -166,28 +166,28 @@
     </thead>
   <tbody id="car-list">
       
-                     <tr>
+                     <tr class="date-car">
                           <td>Idea</td>
                           <td>Fiat</td>
                           <td>2017</td>
                           <td>KBZ2543</td>
                           <td>Lilas</td>
-                          <td>5254854745</td>
+                          <td class="chassi">5254854745</td>
                           <td>12/04/2006</td>
-                          <td>45.000,00</td>     
-                          <td>Vendido</td>     
+                          <td lass="carvalue">45.000,00</td>     
+                          <td class="status">Vendido</td>     
 
                     </tr>
-                     <tr>
+                     <tr class="date-car">
                           <td>Prisma</td>
                           <td>Chevrollet</td>
                           <td>2018</td>
                           <td>LRO007</td>
                           <td>Vermelho</td>
-                          <td>9654712571</td>
+                          <td class="chassi">9654712571</td>
                           <td>05/11/2008</td>
-                          <td>75.000,00</td>          
-                          <td>Disponível</td>     
+                          <td lass="carvalue">75.000,00</td>          
+                          <td class="status">Disponível</td>     
                     </tr>      
 
   </tbody>
@@ -203,7 +203,7 @@
                 
                 
                 
-            <input type="text" name="search" id="search">
+            <input type="text" name="search" id="search" placeholder="Procurar...">
             <table class="table" id="table-sale-list">
               <thead>
                 <tr>
