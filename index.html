@@ -39,7 +39,8 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="vehiclemodel">Modelo</label>
-                    <input name="model" type="text" class="form-control" id="vehiclemodel" placeholder="" value="" required>
+                    <input name="model" type="text" class="form-control" id="vehiclemodel" placeholder="" value="" required> 
+
                   </div>
 
                   <div class="col-md-6 mb-3">
@@ -207,8 +208,27 @@
                 
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="vehiclebrand">Filtrar</label>
-                    <input class="form-control" type="text" name="search" id="search" placeholder="Ex: Compra, Viviane Augusto, 04/2021">
+                      
+                        <div class="row">
+                        <div class="col-md-4 mb-3">
+                        <label for="vehiclebrand">Filtrar</label>
+                        </div>
+                          
+                        <div class="col-md- mb-3">
+                          <input id="btn_purche_historic" type="button" value="compras">
+                         </div>
+                      
+                        <div class="col-md- mb-3">
+                          <input id="btn_sell_historic" type="button" value="vendas">
+                        </div>   
+                            
+                        <div class="col-md- mb-3">
+                          <input id="btn_all_historic" type="button" value="tudo">
+                        </div>                               
+                      </div>
+                      
+                      
+                    <input class="form-control" type="text" name="search" id="search" placeholder="Ex: Viviane, Flávio, 04/2021, 2021">
                   </div>
 
                   <div class="col-md-6 mb-3">
@@ -246,7 +266,7 @@
              </thead>
               <tbody id="historic_list">
                      <tr>
-                          <td>Compra</td>
+                          <td class="type_h">Compra</td>
                           <td class="name_h">---</td>
                           <td class="value_h">4500000</td>
                           <td class="bonus_h">0</td>
@@ -254,7 +274,7 @@
                     </tr>
                   
                      <tr>
-                          <td>Compra</td>
+                          <td class="type_h">Compra</td>
                           <td class="name_h">---</td>
                           <td class="value_h">7500000</td>
                           <td class="bonus_h">0</td>
@@ -262,21 +282,21 @@
                     </tr>
                   
                      <tr>
-                          <td>Venda</td>
+                          <td class="type_h">Venda</td>
                           <td class="name_h">Leonardo Vieira</td>
                           <td class="value_h">4700000</td>
                           <td class="bonus_h">0</td>
                           <td class="data_h">12/05/2021</td>
                     </tr>
                      <tr>
-                          <td>Venda</td>
+                          <td class="type_h">Venda</td>
                           <td class="name_h">Flávio Augusto</td>
                           <td class="value_h">560000</td>
                           <td class="bonus_h">100</td>
                           <td class="data_h">21/04/2021</td>
                     </tr>    
                      <tr>
-                          <td>Venda</td>
+                          <td class="type_h">Venda</td>
                           <td class="name_h">Viviane Fagundes</td>
                           <td class="value_h">550000</td>
                           <td class="bonus_h">200</td>

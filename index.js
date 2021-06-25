@@ -54,10 +54,10 @@ function addLinepurchese(dataCar){
     
         tr.innerHTML = `
                         <tr>
-                          <td>Compra</td>
+                          <td class="type_h">Compra</td>
                           <td class="name_h">---</td>
-                          <td>${dataCar.valueb}</td>
-                          <td>---</td>
+                          <td class="value_h">${dataCar.valueb}</td>
+                          <td class="bonus_h">0</td>
                           <td class="data_h">${dataCar.dateb}</td>
                         </tr>
 `
@@ -72,8 +72,19 @@ document.getElementById("form-purchase").addEventListener("submit", function(eve
     event.preventDefault();
     
     fields.forEach(function(field, index){
-    
-    vehicle[field.name] = field.value;
+
+        if(field.value == "" || field.value.includes(" ") || field.value.length < 3 ){
+           
+           console.log(field);
+                                   
+           }else{
+               
+                   vehicle[field.name] = field.value;
+
+               
+           };
+        
+        
     
 });
     addLine(vehicle);
@@ -82,7 +93,6 @@ document.getElementById("form-purchase").addEventListener("submit", function(eve
     alert("Cadastro de compra realizado")
 });
 
-// fim do cadastramento de veiculos
 
 // Preciso criar um metodo para as duas funcionalidades. por enquanto vou repetir.
 
@@ -94,7 +104,7 @@ document.getElementById("form-sale").addEventListener("submit", function(event){
     event.preventDefault();
     
 fields_sale.forEach(function(field, index){
-    
+        
     sale[field.name] = field.value;
     
 });
@@ -116,10 +126,10 @@ function addLineSale(dataSale){
     
     tr.innerHTML = `
                         <tr>
-                          <td>Venda</td>
+                          <td class="type_h">Venda</td>
                           <td class="name_h">${dataSale.seller}</td>
-                          <td>${dataSale.value}</td>
-                          <td>${seller_bonus}</td>
+                          <td class="value_h">${dataSale.value}</td>
+                          <td class="bonus_h">${seller_bonus}</td>
                           <td class="data_h" >${dataSale.date}</td>
                         </tr>
 `
@@ -211,6 +221,59 @@ function removeCar(dataChassi, dataValue){
         
     });
 
+// Filtro por tipo Compra
+
+    document.getElementById("btn_purche_historic").addEventListener('click', e=>{
+        
+        clear_all_filter();
+        
+        document.getElementById("historic_list").querySelectorAll('tr').forEach((row) =>{
+            
+            if(row.querySelector(".type_h").textContent != "Compra") row.style.display ="none";
+            
+            });
+                    
+    });
+
+
+// Filtro por tipo venda
+
+    document.getElementById("btn_sell_historic").addEventListener('click', e=>{
+        
+        clear_all_filter();
+        
+        document.getElementById("historic_list").querySelectorAll('tr').forEach((row) =>{
+            
+            if(row.querySelector(".type_h").textContent != "Venda") row.style.display ="none";
+            
+            });
+                    
+    });
+
+// Filtro por tipo Tudo
+
+
+
+
+document.getElementById("btn_all_historic").addEventListener('click', e=>{
+        
+    clear_all_filter();
+                    
+    });
+
+
+    function clear_all_filter(){
+        
+                document.getElementById("historic_list").querySelectorAll('tr').forEach((row) =>{
+            
+                row.style.display = "table-row";
+                    
+            
+            });
+        
+
+      };
+
 
 // Calculo comissão
 
@@ -290,14 +353,17 @@ document.getElementById("calculate").addEventListener('click', e=>{
             
         };
         
-        document.getElementById("calculate_value").value = display_value;
-        document.getElementById("calculate_bonus").value = display_bonus;
+        document.getElementById("calculate_value").value = display_value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        document.getElementById("calculate_bonus").value = display_bonus.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
         
     });
     
     display_value = 0;
     display_bonus = 0;
 });
+
+// 
+
 
 
 

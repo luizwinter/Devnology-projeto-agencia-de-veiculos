@@ -25,3 +25,7 @@ main{
 .calculate{
     border-bottom: 1px solid pink;
 }
+
+span{
+    padding: 2px !important;
+}
