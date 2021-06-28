@@ -66,49 +66,117 @@ function addLinepurchese(dataCar){
     
 }
 
+// Registro de compra e validação do campo
 
 document.getElementById("form-purchase").addEventListener("submit", function(event){
+    
+    let continue_register = 0;
     
     event.preventDefault();
     
     fields.forEach(function(field, index){
 
         if(field.value == "" || field.value.includes(" ") || field.value.length < 3 ){
-           
-           console.log(field);
+                    
+            if(field.type == "text" ){
+                
+            field.value = "Valor Invalido";
+
+                
+            }else {
+                
+                 field.value = "00000";
+
+                
+            };
+                        
+                       
+           continue_register = 1;
+
                                    
            }else{
-               
                    vehicle[field.name] = field.value;
-
-               
-           };
-        
-        
-    
+           };    
+            
 });
-    addLine(vehicle);
-    addLinepurchese(vehicle);
     
-    alert("Cadastro de compra realizado")
+    
+    if(continue_register > 0)
+        
+        {
+            alert('Registro de compra incompleto');
+            
+        } else {
+            
+            addLine(vehicle);
+            addLinepurchese(vehicle);
+
+            alert("Cadastro de compra realizado")
+            
+            document.getElementById("form-purchase").reset();
+
+
+        };
+    
+
 });
 
 
 // Preciso criar um metodo para as duas funcionalidades. por enquanto vou repetir.
 
 
-//incio do cadastro de vendas
+//incio do cadastro de vendas // validação
 
 document.getElementById("form-sale").addEventListener("submit", function(event){
     
+    let continue_register = 0;
+
     event.preventDefault();
     
 fields_sale.forEach(function(field, index){
+    
+    if(field.value == "" || field.value.length < 3 ){
         
-    sale[field.name] = field.value;
+        if(field.type == "text" ){
+                
+            field.value = "Valor Invalido";
+
+                
+            }else {
+                
+                 field.value = "00000";
+
+                
+            };
+        
+        
+                       continue_register = 1;
+
+        
+        }else {
+            
+                    sale[field.name] = field.value;
+
+        };       
     
 });
-    addLineSale(sale);
+    
+    if(continue_register > 0){
+        
+        
+        alert("Registro de venda incompleto");
+    }else{
+        
+            addLineSale(sale);
+        
+             alert("Cadastro de venda realizado")
+            
+            document.getElementById("form-sale").reset();
+
+        
+    };
+    
+    
 });
 
 

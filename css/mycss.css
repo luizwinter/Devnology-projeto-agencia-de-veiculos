@@ -29,3 +29,21 @@ main{
 span{
     padding: 2px !important;
 }
+
+body{
+    background-image: url(/img/i007652.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+article{
+    background: rgba(38, 38, 38, 0.7);
+    border-radius: 25px;
+    
+}
+
+.inner h3{
+    font-family: 'Yellowtail', cursive;
+    font-size: 45px;
+}

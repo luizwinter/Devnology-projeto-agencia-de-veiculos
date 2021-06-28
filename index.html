@@ -12,6 +12,13 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="css/cover.css" rel="stylesheet">
+      
+      
+      <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+      
 
     <title>Devnology Veículos </title>
   </head>
@@ -33,55 +40,55 @@
     
           <article id="register_entry">
               <div class="row">
-              <div class="col-md-6 order-md-1">
+              <div class="col-md-6 order-md-1 aside1">
               <h4 class="mb-3">Cadastrar compra</h4>
               <form id="form-purchase" class="needs-validation" novalidate>
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="vehiclemodel">Modelo</label>
-                    <input name="model" type="text" class="form-control" id="vehiclemodel" placeholder="" value="" required> 
+                    <input name="model" type="text" class="form-control" id="vehiclemodel" placeholder="Ex: Corsa" value="" required> 
 
                   </div>
 
                   <div class="col-md-6 mb-3">
                     <label for="vehiclebrand">Marca</label>
-                    <input name="brand" type="text" class="form-control" id="vehiclebrand" placeholder="" value="" required>
+                    <input name="brand" type="text" class="form-control" id="vehiclebrand" placeholder="Ex: Fiat" value="" required>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="vehicleyear">Ano do veículo</label>
-                    <input name="year" type="text" class="form-control" id="vehicleyear" placeholder="" value="" required>
+                    <input name="year" type="text" class="form-control" id="vehicleyear" placeholder="Ex: 2012" value="" required>
                   </div>
 
                   <div class="col-md-6 mb-3">
                     <label for="veicleplate">Placa</label>
-                    <input name="plate" type="text" class="form-control" id="veicleplate" placeholder="" value="" required>
+                    <input name="plate" type="text" class="form-control" id="veicleplate" placeholder="Ex: PSE2R52" value="" required>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="vehiclecollor">Cor</label>
-                    <input name="color" type="text" class="form-control" id="vehiclecollor" placeholder="" value="" required>
+                    <input name="color" type="text" class="form-control" id="vehiclecollor" placeholder="Ex: Prata" value="" required>
                   </div>
 
                   <div class="col-md-6 mb-3">
                     <label for="veiclechassi">Chassi</label>
-                    <input name="chassi" type="text" class="form-control" id="veiclechassi" placeholder="" value="" required>
+                    <input name="chassi" type="number" class="form-control" id="veiclechassi" placeholder="Ex: 15457456" value="" required>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="dateb">Data</label>
-                    <input name="dateb" type="text" class="form-control" id="dateb" placeholder="" value="" required>
+                    <input name="dateb" type="text" class="form-control" id="dateb" placeholder="Ex: 12/11/1994" value="" required>
                   </div>
 
                   <div class="col-md-6 mb-3">
                     <label for="veiclechassi">Valor</label>
-                    <input name="valueb" type="text" class="form-control" id="valueb" placeholder="" value="" required>
+                    <input name="valueb" type="number" class="form-control" id="valueb" placeholder="Ex: 45000" value="" required>
                   </div>
                 </div>                  
 
@@ -98,7 +105,7 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="seller" class="form-label">Vendedor</label>
-                    <input name="seller" list="sellers" type="text" class="form-control" id="seller" placeholder="" value="" required>
+                    <input name="seller" list="sellers" type="text" class="form-control" id="seller" placeholder="Ex: Diego da Costa" value="" required>
                         <datalist id="sellers">
                             <option value="Diego da Costa"></option>
                             <option value="Leonardo Vieira"></option>
@@ -115,27 +122,25 @@
 
                   <div class="col-md-6 mb-3">
                     <label for="sellvalue">Valor</label>
-                    <input name="value" type="text" class="form-control" id="sellvalue" placeholder="" value="" required>
+                    <input name="value" type="number" class="form-control" id="sellvalue" placeholder="75000" value="" required>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-6 mb-3">
-                    <label for="sellbonus">Comissão</label>
-                    <input name="bonus" type="text" class="form-control" id="sellbonus" placeholder="" value="" required disabled>
+                      
+                      <label  for="chassisale">Chassi</label>
+                    <input name="chassisale" type="number" class="form-control" id="sellchassi" placeholder="15457456" value="" required>
+                      
                   </div>
 
                   <div class="col-md-6 mb-3">
                     <label  for="selldate">Data</label>
-                    <input name="date" type="text" class="form-control" id="selldate" placeholder="" value="" required>
+                    <input name="date" type="text" class="form-control" id="selldate" placeholder="25/06/2021" value="" required>
                   </div>
                 </div>
                   
-                    <div class="col-md-12 mb-3">
-
-                    <label  for="chassisale">Chassi</label>
-                    <input name="chassisale" type="text" class="form-control" id="sellchassi" placeholder="" value="" required>
-                    </div>
+ 
 
                         
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
@@ -214,17 +219,14 @@
                         <label for="vehiclebrand">Filtrar</label>
                         </div>
                           
-                        <div class="col-md- mb-3">
+                        <div class="col-md-8 mb-3">
                           <input id="btn_purche_historic" type="button" value="compras">
-                         </div>
-                      
-                        <div class="col-md- mb-3">
-                          <input id="btn_sell_historic" type="button" value="vendas">
-                        </div>   
                             
-                        <div class="col-md- mb-3">
-                          <input id="btn_all_historic" type="button" value="tudo">
-                        </div>                               
+                          <input id="btn_sell_historic" type="button" value="vendas">       
+                            
+                          <input id="btn_all_historic" type="button" value="tudo">  
+                        </div>
+                                                   
                       </div>
                       
                       
