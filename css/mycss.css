@@ -32,18 +32,99 @@ span{
 
 body{
     background-image: url(/img/i007652.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 66%; 
+    padding: 20px;
+    background-position: center
+    
 }
 
 article{
     background: rgba(38, 38, 38, 0.7);
     border-radius: 25px;
+    width: 850px;
+
+}
+
+.article_home{
+    padding: 10px;
     
+}
+.article_page2{
+        
+}
+
+
+
+.masthead{
+    display: block;
 }
 
 .inner h3{
     font-family: 'Yellowtail', cursive;
     font-size: 45px;
+    border-bottom: solid 1px white;
 }
+
+h1{
+    
+    font-size: 27px !important;
+    padding: 10px;
+}
+
+
+@media (max-width: 863px) { 
+    .article_page3 tr{
+        
+        font-size: 12px;
+    
+    }    
+}
+
+
+@media (max-width: 832px) { 
+
+    article{
+        width: 100%;
+    }
+        
+}
+
+@media (max-width: 767px) { 
+
+    body{
+        background-position: top;  
+        background-size: 100%;
+        background-attachment: fixed;
+    }
+    
+    .article_page3 tr{
+        
+        font-size: 11px;
+    
+    }
+        
+}
+
+@media (max-width: 650px) { 
+    .article_page3 tr{
+        
+        font-size: 10px;
+    
+    }    
+}
+
+@media (max-width: 600px) { 
+    .article_page3 tr{
+        
+        font-size: 9px;
+    
+    }    
+}
+
+
+
+
+
+
+
