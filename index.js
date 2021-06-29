@@ -359,13 +359,21 @@ document.getElementById("btn_all_historic").addEventListener('click', e=>{
 // Home page
 
     
-    document.getElementById("home_btn").addEventListener('click', e=>{
+    document.querySelectorAll(".home_btn").forEach(e =>{
+        
+        console.log(e);
+        
+        e.addEventListener('click', e=>{
         
         historic_page.style.display = "none";
         vehicle_page.style.display = "none";
         home_page.style.display = "block";
         
+ });
+        
+        
     });
+    
 
 
 
