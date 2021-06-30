@@ -110,9 +110,7 @@ document.getElementById("form-purchase").addEventListener("submit", function(eve
             
             addLine(vehicle);
             addLinepurchese(vehicle);
-
-            alert("Cadastro de compra realizado")
-            
+        
             document.getElementById("form-purchase").reset();
 
 
@@ -130,12 +128,14 @@ document.getElementById("form-purchase").addEventListener("submit", function(eve
 document.getElementById("form-sale").addEventListener("submit", function(event){
     
     let continue_register = 0;
+    let continue_register2 = 0;
+    
 
     event.preventDefault();
     
 fields_sale.forEach(function(field, index){
     
-    if(field.value == "" || field.value.length < 3 ){
+    if(field.value == "" || field.value.length < 3 || field.value == "00000"){
         
         if(field.type == "text" ){
                 
@@ -151,30 +151,52 @@ fields_sale.forEach(function(field, index){
         
         
                        continue_register = 1;
-
         
-        }else {
-            
-                    sale[field.name] = field.value;
+        };
+    
+                     sale[field.name] = field.value;
 
-        };       
     
 });
     
     if(continue_register > 0){
-        
+            
         
         alert("Registro de venda incompleto");
     }else{
         
-            addLineSale(sale);
-        
-             alert("Cadastro de venda realizado")
-            
-            document.getElementById("form-sale").reset();
-
-        
+                let chassi_compare = document.querySelector('[name="chassisale"]').value;
+                    
+                    document.getElementById("table-car-list").querySelectorAll('.chassi').forEach(e => {
+                        
+                       //console.log(e.innerHTML);                 
+                        //console.log(chassi_compare);
+                        
+                        if(e.innerHTML == chassi_compare){
+                                                        
+                            addLineSale(sale);
+                    
+                            document.getElementById("form-sale").reset();
+                            
+                            continue_register2 = 1;
+                            
+                            console.log(continue_register2);
+                        
+                            
+                        }else{
+                            
+                            continue_register = 2;
+                    
+                        };
+                        
+                    });
+                    
     };
+    
+            if(continue_register == 2 && continue_register2 != 1){
+                
+                alert("Chassi não encontrado");
+            };
     
     
 });
@@ -217,7 +239,6 @@ function removeCar(dataChassi, dataValue){
     
     list.forEach(function(list, index){
         
-        console.log(list);
         
        let chassi_field = list.querySelector(".chassi").innerHTML;
        let status_field = list.querySelector(".status");
