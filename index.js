@@ -31,10 +31,10 @@ function addLine(dataCar){
             
     tr.innerHTML = `
                         <tr>
-                          <td>${dataCar.model}</td>
-                          <td>${dataCar.brand}</td>
+                          <td>${dataCar.model.toUpperCase()}</td>
+                          <td>${dataCar.brand.toUpperCase()}</td>
                           <td>${dataCar.year}</td>
-                          <td>${dataCar.plate}</td>
+                          <td>${dataCar.plate.toUpperCase()}</td>
                           <td>${dataCar.color}</td>
                           <td class="chassi">${dataCar.chassi}</td>
                           <td>${dataCar.dateb}</td>
@@ -195,7 +195,7 @@ function addLineSale(dataSale){
     tr.innerHTML = `
                         <tr>
                           <td class="type_h">Venda</td>
-                          <td class="name_h">${dataSale.seller}</td>
+                          <td class="name_h">${dataSale.seller.toUpperCase()}</td>
                           <td class="value_h">${dataSale.value}</td>
                           <td class="bonus_h">${seller_bonus}</td>
                           <td class="data_h" >${dataSale.date}</td>
@@ -217,15 +217,16 @@ function removeCar(dataChassi, dataValue){
     
     list.forEach(function(list, index){
         
-
+        console.log(list);
         
        let chassi_field = list.querySelector(".chassi").innerHTML;
        let status_field = list.querySelector(".status");
+        let carname_field = list.querySelector(".carname").innerHTML;
 
         if(chassi_field == dataChassi){
 
             status_field.textContent = "Vendido";
-            alert(status_field.textContent);
+            alert(carname_field + " " + status_field.textContent);
 
             // Aproveitamento do codigo para calcular a comissão
             
@@ -360,9 +361,7 @@ document.getElementById("btn_all_historic").addEventListener('click', e=>{
 
     
     document.querySelectorAll(".home_btn").forEach(e =>{
-        
-        console.log(e);
-        
+                
         e.addEventListener('click', e=>{
         
         historic_page.style.display = "none";

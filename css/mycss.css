@@ -31,10 +31,17 @@ span{
 body{
     background-image: url(/img/i007652.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 62%; 
+    background-size: 100% ;
     padding: 20px;
-    background-position: center
-    
+    background-position-y: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+.table-dark{
+    background: rgba(38, 38, 38, 0.7) !important;
+    border-radius: 25px !important;
+
 }
 
 .calculate{
@@ -43,16 +50,21 @@ body{
 
 article{
     background: rgba(38, 38, 38, 0.7);
-    border-radius: 25px;
-    width: 850px;
+    width: 950px;
 
 }
+
+
 
 .article_home{
     padding: 10px;
     
 }
 .article_page2{
+        
+}
+
+.article_page3{
         
 }
 
@@ -149,7 +161,7 @@ h1{
     
     body{
         background-size: 450px;
-        min-width: 450px;
+        min-width: 400px;
         background-attachment:fixed;
 
     }
