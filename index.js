@@ -120,13 +120,13 @@ document.getElementById("form-purchase").addEventListener("submit", function(eve
 });
 
 
-// Preciso criar um metodo para as duas funcionalidades. por enquanto vou repetir.
-
 
 //incio do cadastro de vendas // validação
 
 document.getElementById("form-sale").addEventListener("submit", function(event){
     
+    
+    //Variaveis para validação da venda
     let continue_register = 0;
     let continue_register2 = 0;
     
@@ -149,11 +149,11 @@ fields_sale.forEach(function(field, index){
                 
             };
         
-        
+                        //Contador da validação
                        continue_register = 1;
         
         };
-    
+                        //atribuindo valores do foreach
                      sale[field.name] = field.value;
 
     
@@ -166,11 +166,11 @@ fields_sale.forEach(function(field, index){
     }else{
         
                 let chassi_compare = document.querySelector('[name="chassisale"]').value;
+                let sale_compare =  document.querySelector(".status").value;
+        
                     
                     document.getElementById("table-car-list").querySelectorAll('.chassi').forEach(e => {
-                        
-                       //console.log(e.innerHTML);                 
-                        //console.log(chassi_compare);
+       
                         
                         if(e.innerHTML == chassi_compare){
                                                         
@@ -179,9 +179,7 @@ fields_sale.forEach(function(field, index){
                             document.getElementById("form-sale").reset();
                             
                             continue_register2 = 1;
-                            
-                            console.log(continue_register2);
-                        
+                                                    
                             
                         }else{
                             
@@ -458,11 +456,10 @@ document.getElementById("calculate").addEventListener('click', e=>{
     display_bonus = 0;
 });
 
-// 
 
+// data
 
-
-
+ 
 
 
 
